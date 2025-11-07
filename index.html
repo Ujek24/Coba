@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="en">
     <head>
+		<link rel="stylesheet" href="css/leaflet.photon.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
+		<script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js"></script>
 		<meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
@@ -1106,6 +1109,18 @@
         map.on("layerremove", function(){
             resetLabels([layer_Peribadatan_PT_2,layer_Kesehatan_PT_4,layer_Pendidikan_PT_5,layer_Kantor_DesaNegeri_7,layer_SDA_PT_12]);
         });
+			// === Lokasi Pengguna (GPS) ===
+		L.control.locate({
+   		position: 'topleft',
+   		flyTo: true,
+    	strings: {
+       	title: "Tampilkan Lokasi Saya"
+   		},
+    	locateOptions: {
+        enableHighAccuracy: true
+    	}
+		}).addTo(map);
+// ==============================
         </script>        
     </body>
 </html>
