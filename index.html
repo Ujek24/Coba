@@ -1,8 +1,6 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
-		<script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js"></script>
 		<meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
@@ -54,13 +52,6 @@
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
         	}).fitBounds([[-2.9613226975734004,129.8186128999753],[-2.9365065965643313,129.86037814213748]]);
-			L.control.locate({
- 			position: 'topleft',
-  			strings: {
-    		title: "Tampilkan Lokasi Saya"
-  			},
-  			flyTo: true
-			}).addTo(map);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
