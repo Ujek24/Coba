@@ -1110,16 +1110,14 @@
             resetLabels([layer_Peribadatan_PT_2,layer_Kesehatan_PT_4,layer_Pendidikan_PT_5,layer_Kantor_DesaNegeri_7,layer_SDA_PT_12]);
         });
 			// === Lokasi Pengguna (GPS) ===
-		L.control.locate({
-   		position: 'topleft',
-   		flyTo: true,
-    	strings: {
-       	title: "Tampilkan Lokasi Saya"
-   		},
-    	locateOptions: {
-        enableHighAccuracy: true
-    	}
-		}).addTo(map);
+		setTimeout(() => {
+ 			L.control.locate({
+    		position: 'topleft',
+    		flyTo: true,
+    		strings: { title: "Tampilkan Lokasi Saya" },
+    		locateOptions: { enableHighAccuracy: true }
+  			}).addTo(map);
+			}, 1000);
 // ==============================
         </script>        
     </body>
